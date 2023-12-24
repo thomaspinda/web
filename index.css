@@ -1,0 +1,11 @@
+#nombre{
+    position: relative;
+    left: 40%
+}
+#run{
+    position: relative;
+    left: 40%;
+}
+#digit{
+    width: 2%;
+}
