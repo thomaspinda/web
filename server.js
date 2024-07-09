@@ -1,17 +1,16 @@
 const express = require('express');
 const path = require('path');
-
 const app = express();
-const PORT = process.env.PORT || 8080;
 
-// Servir archivos estáticos
-app.use(express.static(path.join(__dirname, 'public')));
+// Servir archivos estáticos desde la carpeta donde se encuentra server.js
+app.use(express.static(__dirname));
 
-// Servir el archivo HTML principal
+// Ruta para servir el archivo index.html
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`Servidor escuchando en el puerto ${PORT}`);
 });
